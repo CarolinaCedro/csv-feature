@@ -1,5 +1,8 @@
 # csv-feature
 
+front-end: Angular
+back-end: Java/MongoDb
+
 ### Estudos
 
 ![WhatsApp Image 2023-06-03 at 20 05 28](https://github.com/CarolinaCedro/csv-feature/assets/75391803/a5aff5ea-3148-442f-b79a-f7ce9c950713)
