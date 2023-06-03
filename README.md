@@ -1,7 +1,8 @@
 # csv-feature
 
-front-end: Angular
-back-end: Java/MongoDb
+front-end: Angular, 
+back-end: Java/MongoDb/Spring-boot/Docker e etc
+
 
 ### Estudos
 
