@@ -1,0 +1,117 @@
+<div class="csv-generator">
+  <div class="header">
+    <h1>CSV Generator</h1>
+  </div>
+  <div class="container">
+    <div class="btn-generator-csv">
+      <button (click)="openSelectedFields()"  *ngIf="openGenerated">Gerar csv</button>
+    </div>
+
+    <div class="csv-generator-fields" *ngIf="isGenerated">
+      <p>Escolha quais campos deseja incluir na geração de csv</p>
+      <form [formGroup]="form">
+        <div>
+          <input type="checkbox" id="checkboxConta" name="checkboxConta" value="conta" formControlName="conta">
+          <label for="checkboxConta">Conta</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkboxCiclo" name="checkboxCiclo" value="ciclo" formControlName="ciclo">
+          <label for="checkboxCiclo">Ciclo</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkboxContato" name="checkboxContato" value="contato" formControlName="contato">
+          <label for="checkboxContato">Contato</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkboxCodConta" name="checkboxCodConta" value="cod_conta" formControlName="cod_conta">
+          <label for="checkboxCodConta">Cod Conta</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkboxNameCollaborator" name="checkboxNameCollaborator"
+                 value="name_collaborator"
+                 formControlName="name_collaborator">
+          <label for="checkboxNameCollaborator">Name Collaborator</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkboxValor" name="checkboxValor" value="valor" formControlName="valor">
+          <label for="checkboxValor">Valor</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkboxTpDespesa" name="checkboxTpDespesa" value="tp_despesa" formControlName="tp_despesa">
+          <label for="checkboxTpDespesa">Tp Despesa</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkboxTpCombustivel" name="checkboxTpCombustivel" value="tp_combustivel" formControlName="tp_combustivel">
+          <label for="checkboxTpCombustivel">Tp Combustivel</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkboxTpDocument" name="checkboxTpDocument" value="tp_document" formControlName="tp_document">
+          <label for="checkboxTpDocument">Tp Document</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkboxQtde" name="checkboxQtde" value="qtde" formControlName="qtde">
+          <label for="checkboxQtde">Qtde</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkboxTpConsolidacao" name="checkboxTpConsolidacao" value="tp_consolidacao" formControlName="tp_consolidacao">
+          <label for="checkboxTpConsolidacao">Tp Consolidacao</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkboxObservacao" name="checkboxObservacao" value="observacao" formControlName="observacao">
+          <label for="checkboxObservacao">Observacao</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkboxRegistro" name="checkboxRegistro" value="registro" formControlName="registro">
+          <label for="checkboxRegistro">Registro</label>
+        </div>
+        <div>
+          <input type="checkbox" id="checkboxDate" name="checkboxDate" value="date" formControlName="date">
+          <label for="checkboxDate">Date</label>
+        </div>
+
+        <div class="btn-gerar">
+          <button (click)="generatedCsv()">gerar</button>
+        </div>
+      </form>
+
+    </div>
+
+    <table>
+      <thead>
+      <tr>
+        <th>Conta</th>
+        <th>Ciclo</th>
+        <th>Contato</th>
+        <th>Código da Conta</th>
+        <th>Nome do Colaborador</th>
+        <th>Valor</th>
+        <th>Tipo de Despesa</th>
+        <th>Tipo de Combustível</th>
+        <th>Tipo de Documento</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of sumaryList; let i = index">
+        <td>{{item.conta}}</td>
+        <td>{{item.ciclo}}</td>
+        <td>{{item.contato}}</td>
+        <!--        <td>Não possui</td>-->
+        <!--        <td>Não possui</td>-->
+        <!--        <td>Não possui</td>-->
+        <td>{{item.cod_conta}}</td>
+        <td>{{item.name_collaborator}}</td>
+        <td>{{item.valor}}</td>
+        <td>{{item.tp_consolidacao}}</td>
+        <td>{{item.observacao}}</td>
+        <td>{{item.observacao}}</td>
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+</div>
+
+
+<router-outlet></router-outlet>
